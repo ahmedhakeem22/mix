@@ -169,7 +169,7 @@ function HorizontalAdsSection({ title, ads, sectionId }: HorizontalAdsSectionPro
                           <img
                             src={getImageUrl(ad)}
                             alt={ad.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform"
+                            className="w-full h-full object-cover object-center hover:scale-105 transition-transform"
                             loading="lazy"
                           />
                         ) : (

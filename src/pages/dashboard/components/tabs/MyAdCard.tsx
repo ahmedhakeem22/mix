@@ -58,8 +58,8 @@ export function MyAdCard({ listing, onPromote, onDelete, onRefresh }: MyAdCardPr
   return (
     <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
       <div className="flex h-40">
-        <div className="relative w-32 flex-shrink-0 sm:w-40">
-          <div 
+        <div className="relative w-32 flex-shrink-0 sm:w-40 overflow-hidden">
+          <div
             className="absolute top-2 right-2 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black/50 text-white transition-transform hover:scale-110"
             title="عرض تفاصيل الإعلان"
             onClick={() => navigate(`/ad/${listing.id}`)}
@@ -67,7 +67,7 @@ export function MyAdCard({ listing, onPromote, onDelete, onRefresh }: MyAdCardPr
             <ExternalLink className="h-4 w-4" />
           </div>
           {imageUrl ? (
-            <img src={imageUrl} alt={listing.title} className="h-full w-full object-cover" />
+            <img src={imageUrl} alt={listing.title} className="h-full w-full object-cover object-center" />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
               <ImageIcon className="h-10 w-10" />
