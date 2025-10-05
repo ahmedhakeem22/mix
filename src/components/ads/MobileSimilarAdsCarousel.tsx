@@ -189,7 +189,7 @@ export function MobileSimilarAdsCarousel({
                     <img
                       src={getImageUrl(ad)}
                       alt={ad.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.src = '/placeholder.svg';
                       }}
