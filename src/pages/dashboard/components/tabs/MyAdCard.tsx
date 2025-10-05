@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Listing } from '@/types';
-import { Eye, Edit, Trash2, TrendingUp, Calendar, MapPin, RefreshCw, ImageIcon, ExternalLink } from 'lucide-react';
+import { Eye, CreditCard as Edit, Trash2, TrendingUp, Calendar, MapPin, RefreshCw, Image as ImageIcon, ExternalLink } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { ar } from 'date-fns/locale';
 import { cn } from '@/lib/utils';
