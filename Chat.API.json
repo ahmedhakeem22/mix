@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "4a4d7078-1686-4889-810e-6f675c3daae3",
+		"name": "Chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18405291"
+	},
+	"item": [
+		{
+			"name": "get all chats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/chats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"chats"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all chats",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/chats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"chats"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.25.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:59:44 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Chats retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 54,\n            \"other_participant\": {\n                \"id\": 6,\n                \"full_name\": \"عبدالرحمن 77 الوريفي\",\n                \"image\": null\n            }\n        }\n    ],\n    \"current_page\": 1,\n    \"first_page_url\": \"https://haraj-syria.test/api/v1/user/chats?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"https://haraj-syria.test/api/v1/user/chats?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"https://haraj-syria.test/api/v1/user/chats?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"https://haraj-syria.test/api/v1/user/chats\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": 1,\n    \"total\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "get chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/chats/53",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"chats",
+						"53"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get chat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/chats/54",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"chats",
+								"54"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.25.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:11:58 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Messages retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"chat_id\": 54,\n            \"message\": {\n                \"text\": \"sdfhgsdfhgsdf\"\n            },\n            \"file_url\": null,\n            \"is_seen\": false,\n            \"sent_by_me\": false,\n            \"sender_type\": \"user\",\n            \"created_at\": \"منذ 17 دقيقة\",\n            \"timestamp\": \"2025-08-20T22:54:40.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"chat_id\": 54,\n            \"message\": {\n                \"text\": \"somehting\"\n            },\n            \"file_url\": null,\n            \"is_seen\": false,\n            \"sent_by_me\": false,\n            \"sender_type\": \"user\",\n            \"created_at\": \"منذ 20 دقيقة\",\n            \"timestamp\": \"2025-08-20T22:51:16.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"chat_id\": 54,\n            \"message\": {\n                \"text\": \"something\"\n            },\n            \"file_url\": null,\n            \"is_seen\": false,\n            \"sent_by_me\": false,\n            \"sender_type\": \"user\",\n            \"created_at\": \"منذ 31 دقيقة\",\n            \"timestamp\": \"2025-08-20T22:40:13.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"chat_id\": 54,\n            \"message\": {\n                \"text\": \"sadad\"\n            },\n            \"file_url\": null,\n            \"is_seen\": false,\n            \"sent_by_me\": false,\n            \"sender_type\": \"user\",\n            \"created_at\": \"منذ 32 دقيقة\",\n            \"timestamp\": \"2025-08-20T22:39:10.000000Z\"\n        },\n        {\n            \"id\": 1,\n            \"chat_id\": 54,\n            \"message\": {\n                \"text\": \"hello from the other side\"\n            },\n            \"file_url\": null,\n            \"is_seen\": false,\n            \"sent_by_me\": false,\n            \"sender_type\": \"user\",\n            \"created_at\": \"منذ 35 دقيقة\",\n            \"timestamp\": \"2025-08-20T22:36:45.000000Z\"\n        }\n    ],\n    \"current_page\": 1,\n    \"first_page_url\": \"https://haraj-syria.test/api/v1/user/chats/54?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"https://haraj-syria.test/api/v1/user/chats/54?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"https://haraj-syria.test/api/v1/user/chats/54?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"https://haraj-syria.test/api/v1/user/chats/54\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 5,\n    \"total\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "New chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "D3vNDA9xCP7LMwwZrKKeleMjrBI0fHWjMhfH7tKKaac135bb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "recipient_id",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Hello, is this item still available?",
+							"type": "text"
+						},
+						{
+							"key": "listing_id",
+							"value": "45",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Zainon/Downloads/sofa.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/chats",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"chats"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New chat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipient_id",
+									"value": "17",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Hello, is this item still available?",
+									"type": "text"
+								},
+								{
+									"key": "listing_id",
+									"value": "160",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Zainon/Downloads/sofa.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/chats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"chats"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.25.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:17:28 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Message sent successfully\",\n    \"data\": {\n        \"id\": 8,\n        \"chat_id\": 55,\n        \"message\": {\n            \"text\": \"Hello, is this item still available?\"\n        },\n        \"file_url\": null,\n        \"is_seen\": false,\n        \"sent_by_me\": true,\n        \"sender_type\": \"member\",\n        \"created_at\": \"منذ ثانية\",\n        \"timestamp\": \"2025-08-20T23:17:28.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "send message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "message",
+							"value": "Hello, is this item still available?",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/chats/{chat_id}/messages",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"chats",
+						"{chat_id}",
+						"messages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "send message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "Hello, is this item still available?",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/chats/55/messages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"chats",
+								"55",
+								"messages"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.25.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:19:37 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Message sent successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"chat_id\": 55,\n        \"message\": {\n            \"text\": \"Hello, is this item still available?\"\n        },\n        \"file_url\": null,\n        \"is_seen\": false,\n        \"sent_by_me\": true,\n        \"sender_type\": \"member\",\n        \"created_at\": \"منذ ثانية\",\n        \"timestamp\": \"2025-08-20T23:19:37.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "messages seen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/user/chats/messages/{message_id}/seen",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"chats",
+						"messages",
+						"{message_id}",
+						"seen"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "messages seen",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/chats/55/messages/9/seen",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"chats",
+								"55",
+								"messages",
+								"9",
+								"seen"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.25.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:29:07 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Message marked as seen.\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,320 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Custom colors */
+    --card-background: #ffffff;
+    --card-border: #e5e7eb;
+    --dark-surface: #f9fafb;
+    --dark-muted: #f3f4f6;
+    
+    /* Brand colors - default values, will be overridden by API */
+    --brand: hsl(142 76% 36%);
+    --brand-foreground: hsl(0 0% 100%);
+    --brand-hover: hsl(142 76% 30%);
+    
+    /* Site colors from API - default values */
+    --site-main-color-one: #f50a0a;
+    --site-main-color-two: #eb1414;
+    --site-main-color-three: #f60909;
+    --heading-color: #ed0c0c;
+    --light-color: #da0b0b;
+    --extra-light-color: #e10e0e;
+  }
+
+  .dark {
+    /* Matte black and dark gray theme */
+    --background: 0 0% 8%; /* Matte black */
+    --foreground: 0 0% 95%; /* Light text */
+
+    --card: 0 0% 12%; /* Dark gray surface */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 15%; /* Dark gray */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%; /* Dark gray */
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 18%; /* Slightly lighter dark gray */
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%; /* Dark gray border */
+    --input: 0 0% 15%;
+    --ring: 0 0% 30%;
+    
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 142 71% 45%;
+    
+    /* Custom dark mode colors - matte black and dark gray */
+    --card-background: hsl(0 0% 12%);
+    --card-border: hsl(0 0% 20%);
+    --dark-surface: hsl(0 0% 15%);
+    --dark-muted: hsl(0 0% 18%);
+    --dark-primary: hsl(0 0% 12%);
+    
+    /* Brand colors in dark mode */
+    --brand: hsl(142 71% 45%);
+    --brand-foreground: hsl(0 0% 8%);
+    --brand-hover: hsl(142 71% 40%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Enhanced dark mode for body and main containers - matte black */
+  .dark body {
+    background-color: hsl(0 0% 8%) !important; /* Matte black */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  .dark main,
+  .dark .min-h-screen,
+  .dark [class*="bg-white"] {
+    background-color: hsl(0 0% 8%) !important; /* Matte black */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  .dark .container {
+    background-color: transparent;
+  }
+  
+  /* Dynamic site colors - will be updated by JavaScript from API */
+  .site-brand-color {
+    color: var(--site-main-color-one);
+  }
+  
+  .site-brand-bg {
+    background-color: var(--site-main-color-one);
+  }
+  
+  .site-heading-color {
+    color: var(--heading-color);
+  }
+  
+  /* Override brand colors with site colors */
+  :root {
+    --brand: var(--site-main-color-one);
+    --brand-hover: var(--site-main-color-two);
+  }
+}
+
+@layer components {
+  
+  .category-icon {
+    @apply flex flex-col items-center justify-center p-3 rounded-lg bg-white shadow-sm transition-all hover:shadow-md cursor-pointer border border-ad-border dark:bg-dark-card dark:border-dark-border dark:text-gray-200;
+  }
+  
+  .ad-card {
+    @apply relative border border-ad-border rounded-lg overflow-hidden bg-white transition-all hover:shadow-md dark:bg-dark-card dark:border-dark-border dark:text-gray-200;
+  }
+  
+  .ad-card-horizontal {
+    @apply flex;
+  }
+  
+  .ad-card-grid {
+    @apply flex flex-col;
+  }
+  
+  .featured-ad {
+    @apply border-featured-border bg-featured dark:border-dark-border dark:bg-dark-primary;
+  }
+  
+  .nav-link {
+    @apply px-3 py-2 text-gray-700 hover:text-primary rounded-md transition-colors dark:text-gray-200 dark:hover:text-primary;
+  }
+  
+  .mobile-nav-link {
+    @apply flex flex-col items-center justify-center p-2 text-xs text-gray-600 hover:text-primary transition-colors dark:text-gray-300 dark:hover:text-primary;
+  }
+  
+  .scroll-container {
+    @apply flex overflow-x-auto pb-2 scrollbar-hide;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .category-pill {
+    @apply px-3 py-1.5 rounded-full bg-gray-100 text-sm font-medium text-gray-700 whitespace-nowrap dark:bg-dark-card dark:text-gray-200 dark:border dark:border-dark-border;
+  }
+  
+  .category-pill-active {
+    @apply bg-brand text-white dark:bg-brand dark:text-white;
+  }
+  
+  .pagination-dot {
+    @apply w-2 h-2 mx-1 rounded-full bg-gray-300 dark:bg-dark-muted;
+  }
+  
+  .pagination-dot-active {
+    @apply bg-brand;
+  }
+  
+  .filter-drawer {
+    @apply fixed bottom-0 left-0 right-0 bg-white dark:bg-dark-background rounded-t-xl border-t border-gray-200 dark:border-dark-border;
+  }
+  
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Enhanced dark mode UI elements - matte black and dark gray */
+  .dark .ad-card,
+  .dark .btn,
+  .dark .dropdown-menu,
+  .dark input,
+  .dark select,
+  .dark textarea {
+    background-color: hsl(0 0% 12%) !important; /* Dark gray surface */
+    border-color: hsl(0 0% 20%) !important; /* Dark gray border */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  .dark .modal-content,
+  .dark .drawer-content,
+  .dark .popover-content,
+  .dark .dialog-content {
+    background-color: hsl(0 0% 8%) !important; /* Matte black background */
+    border-color: hsl(0 0% 20%) !important; /* Dark gray border */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  /* Page containers in dark mode */
+  .dark .bg-gray-50,
+  .dark .bg-gray-100 {
+    background-color: hsl(0 0% 15%) !important; /* Dark gray */
+    color: hsl(0 0% 85%) !important;
+  }
+  
+  /* Cards and surfaces in dark mode */
+  .dark .card,
+  .dark [class*="bg-white"]:not(.text-white) {
+    background-color: hsl(0 0% 12%) !important; /* Dark gray surface */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  /* Forms and inputs in dark mode */
+  .dark input:not([type="submit"]),
+  .dark select,
+  .dark textarea {
+    background-color: hsl(0 0% 15%) !important; /* Dark gray input */
+    border-color: hsl(0 0% 20%) !important; /* Dark gray border */
+    color: hsl(0 0% 95%) !important; /* Light text */
+  }
+  
+  .dark input:not([type="submit"]):focus,
+  .dark select:focus,
+  .dark textarea:focus {
+    border-color: hsl(0 0% 30%) !important;
+    box-shadow: 0 0 0 2px hsl(0 0% 30% / 0.2) !important;
+  }
+
+
+  .scrollbar-hover {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  }
+
+  .scrollbar-hover::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .scrollbar-hover:hover {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-hover:hover::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .scrollbar-hover:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-radius: 4px;
+  }
+
+  
+
+}
