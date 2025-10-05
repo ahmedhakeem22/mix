@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast, useToast } from '@/hooks/use-toast';
 import * as API from '@/services/api';
 import { Listing, ListingDetails, Category, Brand, User, SearchFilters, Comment, PaginatedResponse, ApiResponse } from '@/types';
-import { profileAPI, dashboardAPI } from '@/services/apis';
+import { profileAPI, dashboardAPI, listingsAPI } from '@/services/apis';
 import type { AxiosError } from "axios";
 import { useNavigate } from 'react-router-dom';
 
@@ -672,12 +672,12 @@ export function useUpdateProfile() {
 //   });
 // }
 
-export function useUserListings(filters: SearchFilters) {
+export function useUserListings(filters?: SearchFilters) {
   return useQuery({
     queryKey: ['userListings', filters],
-    
+
     queryFn: async () => {
-      const response = await API.listingsAPI.getListings(filters);
+      const response = await listingsAPI.getCurrentUserListings(filters);
       return response;
     },
 

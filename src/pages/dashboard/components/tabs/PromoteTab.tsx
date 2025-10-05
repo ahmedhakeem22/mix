@@ -14,7 +14,7 @@ import { UserPromotionsTab } from '@/components/promotions/UserPromotionsTab';
 export function PromoteTab() {
   const [selectedListing, setSelectedListing] = useState<any>(null);
   const [promoteDialogOpen, setPromoteDialogOpen] = useState(false);
-  
+
   const { data: userListings, isLoading: loadingListings } = useUserListings();
   const { data: promotionsResponse, isLoading: loadingPromotions } = useUserPromotions();
   const { data: packages, isLoading: loadingPackages } = usePromotionPackages();

@@ -43,7 +43,6 @@ export function AdsTab({ onPromote, onDelete }: AdsTabProps) {
   const itemsPerPage = 8;
 
   const apiFilters = {
-    user_id: user?.id,
     page: page,
     per_page: itemsPerPage,
     status: filters.status === 'all' ? undefined : filters.status,
