@@ -105,16 +105,16 @@ export function AdCard({
           />
         </button>
 
-        <div className="relative w-full h-40 overflow-hidden">
+        <div className="relative w-full h-40 overflow-hidden bg-muted">
           {hasValidImage ? (
             <img
               src={imageUrl}
               alt={ad.title}
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               loading="lazy"
             />
           ) : (
-            <div className="w-full h-full bg-muted flex items-center justify-center flex-col text-muted-foreground">
+            <div className="absolute inset-0 w-full h-full bg-muted flex items-center justify-center flex-col text-muted-foreground">
               <ImageIcon className="h-8 w-8" />
               <span className="text-xs mt-1">لا توجد صورة</span>
             </div>
@@ -185,16 +185,16 @@ export function AdCard({
         />
       </button>
 
-      <div className="w-28 md:w-36 flex-shrink-0 relative overflow-hidden">
+      <div className="w-28 md:w-36 flex-shrink-0 relative overflow-hidden bg-muted">
         {hasValidImage ? (
           <img
             src={imageUrl}
             alt={ad.title}
-            className="w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
+          <div className="absolute inset-0 w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
             <ImageIcon className="h-6 w-6" />
           </div>
         )}
