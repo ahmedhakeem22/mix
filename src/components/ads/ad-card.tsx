@@ -91,26 +91,26 @@ export function AdCard({
       <Link
         to={`/ad/${ad.id}`}
         className={cn(
-          "ad-card block border border-border hover:shadow-md transition-shadow bg-white relative h-80",
+          "ad-card block border border-border hover:shadow-md transition-shadow bg-white relative h-80 overflow-hidden rounded-lg",
           ad.featured && "featured-ad border-t-2 border-t-brand",
           className
         )}
       >
-        <button 
+        <button
           className="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center shadow-sm"
           onClick={handleFavoriteToggle}
         >
-          <Heart 
+          <Heart
             className={`h-5 w-5 ${isFavorite ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`}
           />
         </button>
 
-        <div className="relative w-full h-40">
+        <div className="relative w-full h-40 overflow-hidden">
           {hasValidImage ? (
-            <img 
-              src={imageUrl} 
-              alt={ad.title} 
-              className="w-full h-full object-cover"
+            <img
+              src={imageUrl}
+              alt={ad.title}
+              className="w-full h-full object-cover object-center"
               loading="lazy"
             />
           ) : (
@@ -168,29 +168,29 @@ export function AdCard({
   }
 
   return (
-    <Link 
+    <Link
       to={`/ad/${ad.id}`}
       className={cn(
-        "ad-card flex border border-border hover:shadow-md transition-shadow bg-white relative h-36",
+        "ad-card flex border border-border hover:shadow-md transition-shadow bg-white relative h-36 overflow-hidden rounded-lg",
         ad.featured && "featured-ad border-r-2 border-r-brand",
         className
       )}
     >
-      <button 
+      <button
         className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-white/80 flex items-center justify-center shadow-sm"
         onClick={handleFavoriteToggle}
       >
-        <Heart 
+        <Heart
           className={`h-4 w-4 ${isFavorite ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`}
         />
       </button>
 
-      <div className="w-28 md:w-36 flex-shrink-0 relative">
+      <div className="w-28 md:w-36 flex-shrink-0 relative overflow-hidden">
         {hasValidImage ? (
-          <img 
-            src={imageUrl} 
-            alt={ad.title} 
-            className="w-full h-full object-cover"
+          <img
+            src={imageUrl}
+            alt={ad.title}
+            className="w-full h-full object-cover object-center"
             loading="lazy"
           />
         ) : (
